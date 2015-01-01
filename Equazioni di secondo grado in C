@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/* Programma in C che assegnati i coefficienti a, b, c di un'equazione di secondo
+grado, classifichi l'equazione e ne calcoli le radici */
+main()
+{
+      float a, b, c;
+      printf("Inserisci a, b e c, rispettivamente coefficienti e termine noto dell'equazione:\n");
+      scanf("%f", &a);
+      scanf("%f", &b);
+      scanf("%f", &c);
+      
+      if(a == 0)
+      {     
+          if(b == 0 && c == 0) printf("Equazione indeterminata");
+          else if (b==0) printf("Equazione impossibile");
+          else printf("La soluzione dell'equazione e': %f", -c/b);
+      }
+      else
+      {
+          float delta = b*b-4*a*c;
+          if (delta > 0) printf("Le soluzioni sono: %f e %f", (-b+sqrt(delta))/(2*a), (-b-sqrt(delta))/(2*a));
+          else if (delta == 0) printf("Due soluzioni coincidenti: %f", -b/(2*a));
+          else printf("Non ci sono soluzioni");
+      }   
+         
+      printf("\n\n");
+      system("pause");
+}
