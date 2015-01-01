@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Programma in C che, assegnati tre numeri interi, li comunica in ordine crescente
+
+main()
+{
+      int min, max, mid;
+      
+      printf("Inserire il primo numero: ");
+      scanf("%d", &min);
+      printf("Inserire il secondo numero: ");
+      scanf("%d", &mid);
+      printf("Inserire il terzo numero: ");
+      scanf("%d", &max);
+      
+      if (max > mid)
+      {
+          if (mid > min)
+          {
+             printf("%d  %d  %d", min, mid, max);
+          }
+          else
+          {
+              if(max > min)
+              {
+                  printf("%d  %d  %d", mid, min, max);
+              }
+              else
+              {
+                  printf("%d  %d  %d", mid, max, min);
+              }   
+          }
+      }
+      else
+      {
+          if (mid > min)
+          {
+             printf("%d  %d  %d", min, max, mid);
+          }
+          else
+          {
+              if(max > min)
+              {
+                  printf("%d  %d  %d", max, mid, min);
+              }
+              else
+              {
+                  printf("%d  %d  %d", max, mid, min);
+              }   
+          }
+      }
+      
+      printf("\n\n");
+      system("pause");
+}
