@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Programma in C che, inserito un numero da tastiera, calcoli e comunichi i suoi
+divisori. Nel caso il numero sia primo, deve visualizzare un messaggio.
+*/
+
+main()
+{
+      int num;
+      int i = 0;
+      int contatore = 0;
+      printf("Inserire un numero intero: ");
+      scanf("%d", &num);
+      i = num;
+      while(i > 0)
+      {
+          if (num % i == 0)
+          {
+              printf("%d\n", i);
+              contatore++;
+          }
+          i--;
+      }
+      
+      if (contatore <= 2) printf("Il numero e' primo.");
+      
+      printf("\n\n");
+      system("pause");
+}
