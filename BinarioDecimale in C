@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/* Programma in C che inserito un numero in base 2 (fissato il numero di bit)
+restituisca il numero in base decimale */
+main()
+{
+      int bitnum;
+      int risultato = 0;
+      int i = 0;
+      
+      printf("Inserisci il numero di bit: ");
+      scanf("%d", &bitnum);
+      
+      while(i < bitnum)
+      {
+          bool valido = false;
+          while (!valido)
+          {
+              printf("\nInserisci il bit n.%d: ", i);
+              char bit;
+              scanf("\n %c", &bit);
+              if (bit == '1')
+              {
+                  risultato += pow(2, i);
+                  valido = true;
+              }
+              else if (bit == '0') valido = true;
+              else printf("Valore non valido.");
+          }
+          i++;
+      }
+      
+      printf("\nIl numero convertito in base 10 e': %d", risultato);
+      
+      printf("\n\n");
+      system("pause");
+}
